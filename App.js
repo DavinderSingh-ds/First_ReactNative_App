@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import {StyleSheet,Text,View,TextInput,Image,Button} from 'react-native';
+import {StyleSheet,Text,View,TextInput,Image,Button,ScrollView} from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const SuperMan = () => {
   return (
@@ -37,7 +38,7 @@ const Kgf = (props) => {
   );
 }
 
-//State Management
+//State Management using Boolean
 const Alien = (props) =>{
   const [isHungry,setIsHungry] = useState(true);
 
@@ -82,8 +83,26 @@ const App = () => {
   const getfullName = (firstName,secondName,thirdName) => {
     return firstName+ " "+secondName+" "+thirdName;
   }
-      return (          
+  //State Management using text
+  const [text,setText] = useState('');
+
+      return (      
+        <ScrollView>    
         <View style={styles.container}>
+
+{/* textInput using StateManagement */}
+<TextInput
+      style = {styles.textfield}
+      placeholder="type Here Something To Translate!"
+      onChangeText={newText => setText(newText)}
+      defaultValue={text}
+      /> 
+    {/* Effect of textField State on Text */}
+        <Text>
+          {text.split(' ').map((word) => word && '🍕').join(' ')}
+        </Text>
+
+
           <Image source={{uri:'https://www.jquery-az.com/html/images/banana.jpg'}}
           style={{width:200,height:200}}
           /> 
@@ -102,9 +121,12 @@ const App = () => {
       defaultValue="Hi Please Enter Your Name : "
       />
      <BatMan/>
-       <Alien category="Martian"/> 
-       <Alien2 category="Nebulian"/>
+      <Alien category="Martian"/> 
+      <Alien2 category="Nebulian"/>
+
+    
      </View>
+     </ScrollView>
 
    
     );
