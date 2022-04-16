@@ -38,14 +38,18 @@ const Kgf = (props) => {
 }
 
 const Alien = (props) =>{
+  const [isHungry,setIsHungry] = useState(true);
 
   return (
     <View>
 
-      <Text>I am {props.category}</Text>
+      <Text>I am {props.category},and I am {isHungry ? "I am So much Hungry":"I am not Hungry."}!</Text>
       <Button
-      
-      title='Click Me'
+      onPress={() =>{
+        setIsHungry(false);
+      }}
+      disabled={!isHungry}
+      title={isHungry ? "Give Me Food" : "ThankYou For Giving Me Food"}
       />
     </View>
   );
@@ -79,6 +83,7 @@ const App = () => {
       />
      <BatMan/>
        <Alien category="Martian"/> 
+       <Alien category="Nebulian"/>
      </View>
 
    
