@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {StyleSheet,Text,View,TextInput,Image,Button,ScrollView,FlatList,SectionList} from 'react-native';
+import {StyleSheet,Text,View,TextInput,Image,Button,ScrollView,FlatList,SectionList,SafeAreaView} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const logo = {
@@ -93,6 +93,7 @@ const App = () => {
   const [text,setText] = useState('');
 
       return (      
+        <SafeAreaView>
         <ScrollView>    
         <View style={styles.container}>
 
@@ -150,12 +151,10 @@ const App = () => {
             {item.key}
           </Text>
         } 
-        />
-        
-          
+        />         
      </View>
 
-     <View style={styles.container}>
+     
       <SectionList
         sections={[
           {title:'Names',data: ['Davinder Singh','Sharukh Khan','John Cena','Roman Reigns']},
@@ -165,10 +164,21 @@ const App = () => {
         renderSectionHeader = {({section})=><Text style={styles.sectionHeader}>{section.title}</Text>}
         keyExtractor = {(item,index) => index}
       />  
-     </View>
-     </ScrollView>
 
-   
+     </ScrollView>
+    
+     </SafeAreaView>
+
+//FlexBox
+
+// <View style={[styles.container3, {
+//           // Try setting `flexDirection` to `"row"`.
+//           flexDirection: "column"
+//         }]}>
+//           <View style={{ flex: 1, backgroundColor: "red" }} />
+//           <View style={{ flex: 2, backgroundColor: "darkorange" }} />
+//           <View style={{ flex: 3, backgroundColor: "green" }} />
+//         </View>
     );
   
   };
@@ -186,6 +196,10 @@ const styles = StyleSheet.create(
       backgroundColor:'red',
       alignItems:'center',
       justifyContent:'center',
+    },
+    container3: {
+      flex: 1,
+      padding: 20,
     },
     textfield :{
       height: 50,
@@ -205,7 +219,7 @@ const styles = StyleSheet.create(
       paddingBottom: 3,
       fontSize: 14,
       fontWeight: 'bold',
-      backgroundColor: 'black',
+      backgroundColor: 'blue',
     }
   }
 );
