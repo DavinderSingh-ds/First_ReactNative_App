@@ -37,6 +37,7 @@ const Kgf = (props) => {
   );
 }
 
+//State Management
 const Alien = (props) =>{
   const [isHungry,setIsHungry] = useState(true);
 
@@ -66,7 +67,6 @@ const App = () => {
           <Image source={{uri:'https://www.jquery-az.com/html/images/banana.jpg'}}
           style={{width:200,height:200}}
           /> 
-
         <Kgf name="Rocky"/> 
         <Kgf/>
         <Kgf name="Garuda"/>
