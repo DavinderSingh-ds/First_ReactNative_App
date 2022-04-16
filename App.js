@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet,Text,View,TextInput,Image} from 'react-native';
+import React,{useState} from 'react';
+import {StyleSheet,Text,View,TextInput,Image,Button} from 'react-native';
 
 const SuperMan = () => {
   return (
@@ -37,6 +37,20 @@ const Kgf = (props) => {
   );
 }
 
+const Alien = (props) =>{
+
+  return (
+    <View>
+
+      <Text>I am {props.category}</Text>
+      <Button
+      
+      title='Click Me'
+      />
+    </View>
+  );
+}
+
 const App = () => {
   const name = 'Davinder Singh';
   const from = "Earth";
@@ -47,7 +61,8 @@ const App = () => {
         <View style={styles.container}>
           <Image source={{uri:'https://www.jquery-az.com/html/images/banana.jpg'}}
           style={{width:200,height:200}}
-          />
+          /> 
+
         <Kgf name="Rocky"/> 
         <Kgf/>
         <Kgf name="Garuda"/>
@@ -63,7 +78,7 @@ const App = () => {
       defaultValue="Hi Please Enter Your Name : "
       />
      <BatMan/>
-     
+       <Alien category="Martian"/> 
      </View>
 
    
