@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet,Text,View,TextInput} from 'react-native';
+import {StyleSheet,Text,View,TextInput,Image} from 'react-native';
 
 const SuperMan = () => {
   return (
@@ -29,6 +29,14 @@ const BatMan = () => {
   );
 }
 
+const Kgf = (props) => {
+  return (
+    <View>
+      <Text>Hi guys I am {props.name}!</Text>
+    </View>
+  );
+}
+
 const App = () => {
   const name = 'Davinder Singh';
   const from = "Earth";
@@ -37,6 +45,13 @@ const App = () => {
   }
       return (          
         <View style={styles.container}>
+          <Image source={{uri:'https://www.jquery-az.com/html/images/banana.jpg'}}
+          style={{width:200,height:200}}
+          />
+        <Kgf name="Rocky"/> 
+        <Kgf/>
+        <Kgf name="Garuda"/>
+        <Kgf name="Adheera"/>
         <SuperMan/>
         <Text>Hi I am Davinder Singh</Text>
         <Text> My Name is : {name}.</Text>
@@ -48,7 +63,10 @@ const App = () => {
       defaultValue="Hi Please Enter Your Name : "
       />
      <BatMan/>
+     
      </View>
+
+   
     );
   
   };
