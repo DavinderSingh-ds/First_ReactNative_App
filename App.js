@@ -90,15 +90,17 @@ const App = () => {
         <ScrollView>    
         <View style={styles.container}>
 
-{/* textInput using StateManagement */}
-<TextInput
+    {/* textInput using StateManagement */}
+
+    <TextInput
       style = {styles.textfield}
       placeholder="type Here Something To Translate!"
       onChangeText={newText => setText(newText)}
       defaultValue={text}
       /> 
     {/* Effect of textField State on Text */}
-        <Text>
+    
+        <Text style={{padding: 10, fontSize: 42}}>
           {text.split(' ').map((word) => word && '🍕').join(' ')}
         </Text>
 
