@@ -56,6 +56,24 @@ const Alien = (props) =>{
   );
 }
 
+const Alien2 = (props) =>{
+  const [isHungry,setIsHungry] = useState(true);
+
+  return (
+    <View>
+
+      <Text>I am {props.category},and I am {isHungry ? "I am So much Hungry":"I am not Hungry."}!</Text>
+      <Button
+      onPress={() =>{
+        setIsHungry(true);
+      }}
+      disabled={!isHungry}
+      title={isHungry ? "Give Me Food" : "ThankYou For Giving Me Food"}
+      />
+    </View>
+  );
+}
+
 const App = () => {
   const name = 'Davinder Singh';
   const from = "Earth";
@@ -83,7 +101,7 @@ const App = () => {
       />
      <BatMan/>
        <Alien category="Martian"/> 
-       <Alien category="Nebulian"/>
+       <Alien2 category="Nebulian"/>
      </View>
 
    
