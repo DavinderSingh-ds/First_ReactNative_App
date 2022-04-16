@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {StyleSheet,Text,View,TextInput,Image,Button,ScrollView} from 'react-native';
+import {StyleSheet,Text,View,TextInput,Image,Button,ScrollView,FlatList} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const logo = {
@@ -135,6 +135,24 @@ const App = () => {
 
     
      </View>
+     <View style={styles.container2}>
+        <FlatList
+          data={[
+            {key:'Davinder'},
+            {key:'Hrithik'},
+            {key:'Sharukh'},
+            {key:'Dwayen Johnson'},
+            {key:'Roman Reigns'},
+            {key:'Krrish'}
+          ]}
+          renderItem={({item}) => 
+          <Text style={styles.item}>
+            {item.key}
+          </Text>
+        }
+        
+        />  
+     </View>
      </ScrollView>
 
    
@@ -150,11 +168,23 @@ const styles = StyleSheet.create(
       alignItems:'center',
       justifyContent:'center',
     },
+    container2 :{
+      height:300,
+      backgroundColor:'red',
+      alignItems:'center',
+      justifyContent:'center',
+    },
     textfield :{
       height: 50,
       borderColor: 'white',
       borderWidth: 2,
-    }
+    },
+    item: {
+      padding: 10,
+      fontSize: 18,
+      height: 44,
+      color:Colors.white,
+    },
   }
 );
 export default App;
