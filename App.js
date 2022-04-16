@@ -2,6 +2,12 @@ import React,{useState} from 'react';
 import {StyleSheet,Text,View,TextInput,Image,Button,ScrollView} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
+const logo = {
+  uri: 'https://reactnative.dev/img/tiny_logo.png',
+  width: 64,
+  height: 64
+};
+
 const SuperMan = () => {
   return (
     <View>
@@ -99,15 +105,16 @@ const App = () => {
       defaultValue={text}
       /> 
     {/* Effect of textField State on Text */}
-    
-        <Text style={{padding: 10, fontSize: 42}}>
-          {text.split(' ').map((word) => word && '🍕').join(' ')}
+
+        <Text style={{padding: 10, fontSize: 30}}>
+          {text.split(' ').map((word) => word && 'U Have Typed Cool').join(' ')}
         </Text>
 
 
           <Image source={{uri:'https://www.jquery-az.com/html/images/banana.jpg'}}
           style={{width:200,height:200}}
           /> 
+          <Image source={logo} style={{width:100,height:100}}/>
         <Kgf name="Rocky"/> 
         <Kgf/>
         <Kgf name="Garuda"/>
