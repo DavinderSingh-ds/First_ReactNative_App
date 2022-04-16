@@ -45,6 +45,7 @@ const Alien = (props) =>{
     <View>
 
       <Text>I am {props.category},and I am {isHungry ? "I am So much Hungry":"I am not Hungry."}!</Text>
+      {/*here On press False*/}
       <Button
       onPress={() =>{
         setIsHungry(false);
@@ -63,7 +64,8 @@ const Alien2 = (props) =>{
     <View>
 
       <Text>I am {props.category},and I am {isHungry ? "I am So much Hungry":"I am not Hungry."}!</Text>
-      <Button
+    {/*  Here on press true */}
+     <Button
       onPress={() =>{
         setIsHungry(true);
       }}
