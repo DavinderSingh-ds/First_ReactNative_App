@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {StyleSheet,Text,View,TextInput,Image,Button,ScrollView,FlatList} from 'react-native';
+import {StyleSheet,Text,View,TextInput,Image,Button,ScrollView,FlatList,SectionList} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const logo = {
@@ -149,9 +149,22 @@ const App = () => {
           <Text style={styles.item}>
             {item.key}
           </Text>
-        }
+        } 
+        />
         
-        />  
+          
+     </View>
+
+     <View style={styles.container}>
+      <SectionList
+        sections={[
+          {title:'Names',data: ['Davinder Singh','Sharukh Khan','John Cena','Roman Reigns']},
+          {title: 'Dept.',data: ['B.Tech','B.Pharmacy','B.Sc.','HM']},
+        ]}
+        renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
+        renderSectionHeader = {({section})=><Text style={styles.sectionHeader}>{section.title}</Text>}
+        keyExtractor = {(item,index) => index}
+      />  
      </View>
      </ScrollView>
 
@@ -180,11 +193,20 @@ const styles = StyleSheet.create(
       borderWidth: 2,
     },
     item: {
-      padding: 10,
-      fontSize: 18,
+      padding: 8,
+      fontSize: 20,
       height: 44,
       color:Colors.white,
     },
+    sectionHeader: {
+      paddingTop: 3,
+      paddingLeft: 10,
+      paddingRight: 10,
+      paddingBottom: 3,
+      fontSize: 14,
+      fontWeight: 'bold',
+      backgroundColor: 'black',
+    }
   }
 );
 export default App;
